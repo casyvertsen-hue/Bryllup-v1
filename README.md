@@ -74,12 +74,15 @@
     <p>13:00 Vielse i Vestbygda kapell<br>15:00 Fest på Spind grendehus AL<br>[Legg til mer detaljer]</p>
   </div>
 
-  <div class="box">
+ <div class="box">
     <h2>Overnatting</h2>
-    <p>Rederiet Hotell: https://www.rederiethotell.no/rom?gad_source=1&gad_campaignid=19148736926&gclid=Cj0KCQjwj47OBhCmARIsAF5wUEEO8GsqH9ksujYc8V5lpsn0tIY8NVfHUzfd6DJsa3kLoeWj4IGM7EQaAhsEEALw_wcB</p>
-    <p>Fjordhotellet: https://farsundfjordhotell.no/?gad_source=1&gad_campaignid=23526888206&gclid=Cj0KCQjwj47OBhCmARIsAF5wUEErnKGipn11nrpLFEzP7DISVks_uuphBaJ0cqDWSSDTWrgaPXY7mLsaAjhjEALw_wcB</p>
-    <p>Campingen: https://lomsesanden.no/ </p>
-    <p>Stayover @ Lista: https://www.stayover.no/ </p>
+    <p>Vi anbefaler følgende overnattingssteder:</p>
+    <p>
+      🏨 <a href="https://www.rederiethotell.no/rom" target="_blank">Rederiet Hotell</a><br>
+      🌊 <a href="https://farsundfjordhotell.no/" target="_blank">Fjordhotellet</a><br>
+      ⛺ <a href="https://lomsesanden.no/" target="_blank">Lomsesanden Camping</a><br>
+      🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a>
+    </p>
   </div>
 
   <div class="box">
