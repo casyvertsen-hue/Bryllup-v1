@@ -39,7 +39,7 @@
       box-shadow:0 4px 10px rgba(0,0,0,0.05);
       opacity:0;
       transform:translateY(20px);
-      transition:all 0.8s ease;
+      /* transition:all 0.8s ease; */
     }
 
     /* FADE-IN effekt
