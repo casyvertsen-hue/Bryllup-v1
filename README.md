@@ -7,7 +7,7 @@
   <title>Bryllup</title>
   <style>
     body {font-family: Arial, sans-serif; margin:0; background:#f9f6f2; color:#333; text-align:center;}
-    header {background:url(https://drive.google.com/file/d/1fG54F0l1mc9q-ux-rXeWerNG0PhLseRS/view?usp=drive_link) center/cover no-repeat; color:white; padding:80px 20px;}
+    header {background:url(img src="https://drive.google.com/uc?export=view&id=1fG54F0l1mc9q-ux-rXeWerNG0PhLseRS") center/cover no-repeat; color:white; padding:80px 20px;}
     header h1 {font-size:36px; margin:0;}
     section {padding:20px 15px; max-width:900px; margin:auto;}
     .box {background:white; padding:20px; margin:15px 0; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.05);} 
@@ -47,7 +47,7 @@
 
   <div class="box">
     <h2>Vårt bilde 💛</h2>
-    <img src="(https://drive.google.com/file/d/1-3Bq0lHkFbvZmCom0C6mwq9NusfhvmSQ/view?usp=sharing)" alt="Bryllupsbilde">
+    <img src="https://drive.google.com/uc?export=view&id=1-3Bq0lHkFbvZmCom0C6mwq9NusfhvmSQ" alt="Bryllupsbilde">
   </div>
 
   <div class="box">
