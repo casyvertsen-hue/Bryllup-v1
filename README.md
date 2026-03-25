@@ -18,7 +18,7 @@
       content:"";
       position:absolute;
       top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.7); /* ← JUSTER HER */
+      background:rgba(0,0,0,0.45); /* ← JUSTER HER */
       z-index:0;
     }
 
@@ -46,8 +46,9 @@
     .box.visible {
       opacity:1;
       transform:translateY(0);
-    } */
-
+    } 
+    */
+    
     img {max-width:100%; border-radius:10px; margin-top:10px; opacity:0.85;} /* ← juster her */
     iframe {width:100%; height:250px; border:0; border-radius:10px; margin-top:10px;}
     #countdown {font-size:20px; margin-top:10px;}
