@@ -1,19 +1,58 @@
 # Bryllup-v2
 
 <html lang="no">
-<head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bryllup</title>
   <style>
     body {font-family: Arial, sans-serif; margin:0; background:#f9f6f2; color:#333; text-align:center;}
-    header {background:url("Kjerag") center/cover no-repeat; color:white; padding:80px 20px;}
+
+    header {
+      position: relative;
+      background:url('Kjerag') center/cover no-repeat;
+      color:white;
+      padding:80px 20px;
+      overflow:hidden;
+    }
+
+    /* MØRK OVERLAY – juster opacity (0.3–0.7 anbefales) */
+    header::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.45); /* ← JUSTER HER */
+      z-index:0;
+    }
+
+    header * {
+      position:relative;
+      z-index:1;
+    }
+
     header h1 {font-size:36px; margin:0;}
+
     section {padding:20px 15px; max-width:900px; margin:auto;}
-    .box {background:white; padding:20px; margin:15px 0; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.05);} 
+
+    .box {
+      background:white;
+      padding:20px;
+      margin:15px 0;
+      border-radius:15px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      opacity:0;
+      transform:translateY(20px);
+      transition:all 0.8s ease;
+    }
+
+    /* FADE-IN effekt */
+    .box.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+
     img {max-width:100%; border-radius:10px; margin-top:10px;}
     iframe {width:100%; height:250px; border:0; border-radius:10px; margin-top:10px;}
     #countdown {font-size:20px; margin-top:10px;}
+
     .btn {
       display:inline-block;
       margin-top:10px;
@@ -24,7 +63,9 @@
       border-radius:8px;
       font-weight:bold;
     }
+
     .btn:hover {background:#c5bcb2;}
+
     footer {padding:20px; font-size:14px; color:#777;}
 
     @media (min-width: 768px) {
