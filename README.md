@@ -53,18 +53,19 @@
   <div class="box">
     <h2>Praktisk informasjon</h2>
     <p><strong>Vielse:</strong> Vestbygda kapell kl. 13:00</p>
-    <p><strong>Fest:</strong> Spind grendehus AL kl. 15:00</p>
-    <p><strong>Kleskode:</strong> [Kleskode]</p>
+    <p><strong>Fest:</strong> Spind grendehus kl. 15:00</p>
+    <p><strong>Festen fortsetter:</strong> kl. 19:00 (for de voksne)</p>
+    <p><strong>Kleskode:</strong> Dress og kjole (men ikke for stivt)</p>
   </div>
 
   <div class="box">
-    <h2>Kart 📍 Vielse</h2>
+    <h2>Kart til vielsen📍</h2>
     <iframe src="https://www.google.com/maps?q=Vestbygda%20kapell&output=embed"></iframe>
     <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Vestbygda+kapell" target="_blank">Få veibeskrivelse</a>
   </div>
 
   <div class="box">
-    <h2>Kart 📍 Fest</h2>
+    <h2>Kart til festen📍</h2>
     <iframe src="https://www.google.com/maps?q=Spind%20grendehus%20AL&output=embed"></iframe>
     <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Spind+grendehus+AL" target="_blank">Få veibeskrivelse</a>
   </div>
