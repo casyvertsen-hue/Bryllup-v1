@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="no">
 <head>
   <meta charset="UTF-8">
@@ -6,10 +5,6 @@
   <title>Bryllup</title>
 
   <style>
-    /* ===============================
-       GLOBALT DESIGN
-    =============================== */
-
     :root {
       --text: clamp(15px, 2.5vw, 19px);
       --h1: clamp(32px, 6vw, 60px);
@@ -33,13 +28,9 @@
     h1 { font-size: var(--h1); margin: 0; }
     h2 { font-size: var(--h2); margin-top: 0; }
 
-    /* ===============================
-       HEADER
-    =============================== */
-
     header {
       position: relative;
-      background: url('Kjerag') center/cover no-repeat;
+      background: url('Kjerag.JPG') center/cover no-repeat;
       padding: clamp(50px, 12vw, 120px) 20px;
       color: white;
       overflow: hidden;
@@ -53,20 +44,8 @@
       z-index: 0;
     }
 
-    header * {
-      position: relative;
-      z-index: 1;
-    }
-
-    #countdown {
-      font-size: clamp(18px, 3vw, 30px);
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    /* ===============================
-       SEKSJON OG BOKSER
-    =============================== */
+    header * { position: relative; z-index: 1; }
+    #countdown { font-size: clamp(18px, 3vw, 30px); margin-top: 10px; font-weight: bold;}
 
     section {
       padding: 20px 15px;
@@ -90,11 +69,7 @@
       transform: translateY(0);
     }
 
-    img {
-      max-width: 100%;
-      border-radius: var(--radius);
-      margin-top: 10px;
-    }
+    img { max-width: 100%; border-radius: var(--radius); margin-top: 10px; }
 
     iframe {
       width: 100%;
@@ -105,13 +80,9 @@
     }
 
     .rsvp {
-      height: 100vh;         /* Dynamisk tilpasset høyde */
-      min-height: 900px;     /* Sikrer at skjema er synlig */
+      height: 140vh;
+      min-height: 1200px;
     }
-
-    /* ===============================
-       KNAPPER
-    =============================== */
 
     .btn {
       display: inline-block;
@@ -126,32 +97,24 @@
       transition: background 0.2s ease;
     }
 
-    .btn:hover {
-      background: var(--btn-hover);
-    }
+    .btn:hover { background: var(--btn-hover); }
 
-    footer {
-      padding: 20px;
-      font-size: clamp(12px, 2vw, 16px);
-      color: #777;
-    }
+    footer { padding: 20px; font-size: clamp(12px, 2vw, 16px); color: #777; }
 
-    
-    /* ===============================
-       MOBIL: bredere bokser og luftigere layout
-    =============================== */
-
+    /* =========================================
+          MOBIL — FULL BREDDE, KANT TIL KANT
+       ========================================= */
     @media (max-width: 700px) {
 
-      /* Mindre padding på utsiden - boksene blir bredere */
       section {
-        padding: 10px 5px;
+        padding: 0;
+        max-width: 100%;
       }
 
-      /* Mindre margin mellom bokser + litt rundere */
       .box {
-        margin: 12px 0;
-        border-radius: 12px;
+        margin: 0 0 20px 0;
+        border-radius: 0;
+        padding: 20px 15px;
       }
     }
 
@@ -171,7 +134,7 @@
 
   <div class="box">
     <h2>Se så fine vi er 💛</h2>
-    <img src="Vin" alt="Bryllupsbilde">
+    <img src="Vin.JPG" alt="Bryllupsbilde">
   </div>
 
   <div class="box">
@@ -206,9 +169,9 @@
   <div class="box">
     <h2>Overnatting</h2>
     <p>
-      🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a><br>
-      👆 Her har vi holdt av 22 soveplasser til god pris.<br>
-      Ta kontakt med oss for å velge rom 💛<br><br>
+      🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a>  
+      <br>22 sengeplasser holdt av – ta kontakt for romvalg 💛  
+      <br><br>
       🏨 <a href="https://www.rederiethotell.no/rom" target="_blank">Rederiet Hotell</a><br>
       🌊 <a href="https://farsundfjordhotell.no/" target="_blank">Fjordhotellet</a><br>
       ⛺ <a href="https://lomsesanden.no/" target="_blank">Lomsesanden Camping</a><br>
@@ -236,16 +199,11 @@
 </footer>
 
 <script>
-  /* ===============================
-     COUNTDOWN
-  =============================== */
-
   const weddingDate = new Date(document.getElementById('wedding-date').innerText).getTime();
   const countdownEl = document.getElementById('countdown');
 
   setInterval(() => {
-    const now = Date.now();
-    const diff = weddingDate - now;
+    const diff = weddingDate - Date.now();
 
     if (diff <= 0) {
       countdownEl.innerHTML = "🎉 Dagen er her!";
@@ -256,15 +214,10 @@
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    countdownEl.innerHTML = `⏳ ${days} dager, ${hours} timer, ${minutes} minutter igjen`;
+    countdownEl.textContent = `⏳ ${days} dager, ${hours} timer, ${minutes} minutter igjen`;
   }, 1000);
 
-  /* ===============================
-     FADE-IN ANIMASJON
-  =============================== */
-
   const boxes = document.querySelectorAll('.box');
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
