@@ -1,84 +1,147 @@
-
+<!DOCTYPE html>
 <html lang="no">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bryllup</title>
+
   <style>
-    body {font-family: Arial, sans-serif; margin:0; background:#f9f6f2; color:#333; text-align:center;}
+    /* ===============================
+       GLOBALT DESIGN
+    =============================== */
+
+    :root {
+      --text: clamp(15px, 2.5vw, 19px);
+      --h1: clamp(32px, 6vw, 60px);
+      --h2: clamp(22px, 4vw, 34px);
+      --radius: 15px;
+      --bg: #f9f6f2;
+      --btn: #d8cfc4;
+      --btn-hover: #c5bcb2;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #333;
+      text-align: center;
+      font-size: var(--text);
+      line-height: 1.5;
+    }
+
+    h1 { font-size: var(--h1); margin: 0; }
+    h2 { font-size: var(--h2); margin-top: 0; }
+
+    /* ===============================
+       HEADER
+    =============================== */
 
     header {
       position: relative;
-      background:url('Kjerag') center/cover no-repeat;
-      color:white;
-      padding:80px 20px;
-      overflow:hidden;
+      background: url('Kjerag') center/cover no-repeat;
+      padding: clamp(50px, 12vw, 120px) 20px;
+      color: white;
+      overflow: hidden;
     }
 
-    /* MØRK OVERLAY – juster opacity (0.3–0.7 anbefales) */
     header::before {
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.35); /* ← JUSTER HER */
-      z-index:0;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.38);
+      z-index: 0;
     }
 
     header * {
-      position:relative;
-      z-index:1;
+      position: relative;
+      z-index: 1;
     }
 
-    header h1 {font-size:36px; margin:0;}
+    #countdown {
+      font-size: clamp(18px, 3vw, 30px);
+      margin-top: 10px;
+      font-weight: bold;
+    }
 
-    section {padding:20px 15px; max-width:900px; margin:auto;}
+    /* ===============================
+       SEKSJON OG BOKSER
+    =============================== */
+
+    section {
+      padding: 20px 15px;
+      max-width: 900px;
+      margin: auto;
+    }
 
     .box {
-      background:white;
-      padding:20px;
-      margin:15px 0;
-      border-radius:15px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.05);
-      opacity:0;
-      transform:translateY(20px);
-      /* transition:all 0.8s ease; */
+      background: white;
+      padding: clamp(15px, 3vw, 25px);
+      margin: 20px 0;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
     }
 
-    /* FADE-IN effekt
     .box.visible {
-      opacity:1;
-      transform:translateY(0);
-    } 
-    */
-    
-    img {max-width:100%; border-radius:10px; margin-top:10px; opacity:0.85;} /* ← juster her */
-    iframe {width:100%; height:250px; border:0; border-radius:10px; margin-top:10px;}
-    #countdown {font-size:20px; margin-top:10px;}
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      margin-top: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      border: 0;
+      border-radius: var(--radius);
+      margin-top: 10px;
+      height: clamp(260px, 35vw, 400px);
+    }
+
+    .rsvp {
+      height: 100vh;         /* Dynamisk tilpasset høyde */
+      min-height: 900px;     /* Sikrer at skjema er synlig */
+    }
+
+    /* ===============================
+       KNAPPER
+    =============================== */
 
     .btn {
-      display:inline-block;
-      margin-top:10px;
-      padding:10px 15px;
-      background:#d8cfc4;
-      color:#333;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      background: var(--btn);
+      color: #333;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: bold;
+      font-size: clamp(16px, 3vw, 22px);
+      transition: background 0.2s ease;
     }
 
-    .btn:hover {background:#c5bcb2;}
+    .btn:hover {
+      background: var(--btn-hover);
+    }
 
-    footer {padding:20px; font-size:14px; color:#777;}
-
-    @media (min-width: 768px) {
-      header h1 {font-size:48px;}
-      #countdown {font-size:24px;}
-      iframe {height:300px;}
+    footer {
+      padding: 20px;
+      font-size: clamp(12px, 2vw, 16px);
+      color: #777;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Åshild & Cedrick</h1>
+  <h1>Åshild &amp; Cedrick</h1>
   <p>Vi gifter oss!</p>
   <p><strong>Dato:</strong> <span id="wedding-date">2026-08-15</span></p>
   <div id="countdown"></div>
@@ -87,53 +150,63 @@
 <section>
 
   <div class="box">
-    <h2>Vårt bilde 💛</h2>
-    <img src="Stranda" alt="Bryllupsbilde">
+    <h2>Se så fine vi er 💛</h2>
+    <img src="Vin" alt="Bryllupsbilde">
   </div>
 
   <div class="box">
     <h2>Praktisk informasjon</h2>
     <p><strong>Vielse:</strong> Vestbygda kapell kl. 13:00</p>
-    <p><strong>Fest:</strong> Spind grendehus kl. 15:00</p>
-    <p><strong>Kleskode:</strong> Dress og kjole (men ikke for stivt)</p>
+    <p><strong>Fest:</strong> Spind grendehus AL kl. 15:00</p>
+    <p><strong>Kleskode:</strong> Dress og kjole – men ikke for stivt. Ta med dansesko!</p>
   </div>
 
   <div class="box">
-    <h2>Kart til vielsen📍</h2>
+    <h2>📍 Kart til vielsen</h2>
     <iframe src="https://www.google.com/maps?q=Vestbygda%20kapell&output=embed"></iframe>
     <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Vestbygda+kapell" target="_blank">Få veibeskrivelse</a>
   </div>
 
   <div class="box">
-    <h2>Kart til festen📍</h2>
+    <h2>📍 Kart til festen</h2>
     <iframe src="https://www.google.com/maps?q=Spind%20grendehus%20AL&output=embed"></iframe>
     <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Spind+grendehus+AL" target="_blank">Få veibeskrivelse</a>
   </div>
 
   <div class="box">
     <h2>Program</h2>
-    <p>13:00 Vielse i Vestbygda kapell💒<br>15:00 Fest på Spind grendehus 🍖🍰 <br>19:00 Festen begynner for de eldre🍺 <br>05:00 Kvelden </p>
+    <p>
+      13:00 Vielse i Vestbygda kapell<br>
+      15:00 Fest på Spind grendehus<br>
+      19:00 Festen begynner for de store<br>
+      05:00 Kvelden
+    </p>
   </div>
 
- <div class="box">
+  <div class="box">
     <h2>Overnatting</h2>
-    <p>Vi anbefaler følgende overnattingssteder:</p>
     <p>
+      🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a><br>
+      👆 Her har vi holdt av 22 soveplasser til god pris.<br>
+      Ta kontakt med oss for å velge rom 💛<br><br>
       🏨 <a href="https://www.rederiethotell.no/rom" target="_blank">Rederiet Hotell</a><br>
       🌊 <a href="https://farsundfjordhotell.no/" target="_blank">Fjordhotellet</a><br>
       ⛺ <a href="https://lomsesanden.no/" target="_blank">Lomsesanden Camping</a><br>
-      🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a>
     </p>
   </div>
 
   <div class="box">
     <h2>RSVP 📝</h2>
-    <iframe src="https://docs.google.com/forms/d/e/EXAMPLE/viewform?embedded=true"></iframe>
+    <iframe class="rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSd2oyFLzM-TEauIwwDhfBARAkKgjZftjDCIMes1-Wi5p2QIhQ/viewform?usp=publish-editor"></iframe>
   </div>
 
   <div class="box">
     <h2>Kontakt</h2>
-    <p>Toastmaster: Thea Seglem Tangen og Tore Solberg Engebretsen</p>
+    <p>
+      Toastmastere:<br>
+      Thea Seglem Tangen — +47 xxxxxxxx<br>
+      Tore Solberg Engebretsen — +47 xxxxxxxx
+    </p>
   </div>
 
 </section>
@@ -143,11 +216,15 @@
 </footer>
 
 <script>
+  /* ===============================
+     COUNTDOWN
+  =============================== */
+
   const weddingDate = new Date(document.getElementById('wedding-date').innerText).getTime();
   const countdownEl = document.getElementById('countdown');
 
   setInterval(() => {
-    const now = new Date().getTime();
+    const now = Date.now();
     const diff = weddingDate - now;
 
     if (diff <= 0) {
@@ -161,8 +238,21 @@
 
     countdownEl.innerHTML = `⏳ ${days} dager, ${hours} timer, ${minutes} minutter igjen`;
   }, 1000);
+
+  /* ===============================
+     FADE-IN ANIMASJON
+  =============================== */
+
+  const boxes = document.querySelectorAll('.box');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+
+  boxes.forEach(box => observer.observe(box));
 </script>
 
 </body>
 </html>
-
