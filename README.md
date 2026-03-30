@@ -5,6 +5,10 @@
   <title>Bryllup</title>
 
   <style>
+    /* ===============================
+       GLOBALT DESIGN
+    =============================== */
+
     :root {
       --text: clamp(15px, 2.5vw, 19px);
       --h1: clamp(32px, 6vw, 60px);
@@ -28,9 +32,13 @@
     h1 { font-size: var(--h1); margin: 0; }
     h2 { font-size: var(--h2); margin-top: 0; }
 
+    /* ===============================
+       HEADER
+    =============================== */
+
     header {
       position: relative;
-      background: url('Kjerag2') center 70% /cover no-repeat;
+      background: url('Kjerag.JPG') center/cover no-repeat;
       padding: clamp(50px, 12vw, 120px) 20px;
       color: white;
       overflow: hidden;
@@ -44,8 +52,20 @@
       z-index: 0;
     }
 
-    header * { position: relative; z-index: 1; }
-    #countdown { font-size: clamp(18px, 3vw, 30px); margin-top: 10px; font-weight: bold;}
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #countdown {
+      font-size: clamp(18px, 3vw, 30px);
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* ===============================
+       SEKSJON OG BOKSER
+    =============================== */
 
     section {
       padding: 20px 15px;
@@ -69,7 +89,11 @@
       transform: translateY(0);
     }
 
-    img { max-width: 100%; border-radius: var(--radius); margin-top: 10px; }
+    img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      margin-top: 10px;
+    }
 
     iframe {
       width: 100%;
@@ -80,9 +104,13 @@
     }
 
     .rsvp {
-      height: 140vh;
-      min-height: 1200px;
+      height: 100vh;
+      min-height: 900px;
     }
+
+    /* ===============================
+       KNAPPER
+    =============================== */
 
     .btn {
       display: inline-block;
@@ -97,24 +125,31 @@
       transition: background 0.2s ease;
     }
 
-    .btn:hover { background: var(--btn-hover); }
+    .btn:hover {
+      background: var(--btn-hover);
+    }
 
-    footer { padding: 20px; font-size: clamp(12px, 2vw, 16px); color: #777; }
+    footer {
+      padding: 20px;
+      font-size: clamp(12px, 2vw, 16px);
+      color: #777;
+    }
 
-    /* =========================================
-          MOBIL — FULL BREDDE, KANT TIL KANT
-       ========================================= */
+    /* ===============================
+       MOBIL: bredere bokser og luftigere layout
+    =============================== */
+
     @media (max-width: 700px) {
 
+      /* Mindre padding på utsiden - boksene blir bredere */
       section {
-        padding: 0;
-        max-width: 100%;
+        padding: 10px 5px;
       }
 
+      /* Mindre margin mellom bokser + litt rundere */
       .box {
-        margin: 0 0 20px 0;
-        border-radius: 0;
-        padding: 20px 15px;
+        margin: 12px 0;
+        border-radius: 12px;
       }
     }
 
@@ -134,7 +169,7 @@
 
   <div class="box">
     <h2>Se så fine vi er 💛</h2>
-    <img src="Vin" alt="Bryllupsbilde">
+    <img src="Vin.JPG" alt="">
   </div>
 
   <div class="box">
@@ -199,6 +234,7 @@
 </footer>
 
 <script>
+  /* COUNTDOWN */
   const weddingDate = new Date(document.getElementById('wedding-date').innerText).getTime();
   const countdownEl = document.getElementById('countdown');
 
@@ -217,6 +253,7 @@
     countdownEl.textContent = `⏳ ${days} dager, ${hours} timer, ${minutes} minutter igjen`;
   }, 1000);
 
+  /* FADE-IN */
   const boxes = document.querySelectorAll('.box');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
