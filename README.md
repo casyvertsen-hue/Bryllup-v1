@@ -78,9 +78,9 @@
     /* 🔥 VIN-BILDE MED BESKJÆRING */
     .vin-bilde {
       width: 70%;
-      height: 320px;           /* ← JUSTER DENNE */
+      height: 300px;           /* ← JUSTER DENNE */
       object-fit: cover;
-      object-position: center;
+      object-position: bottom;
       border-radius: var(--radius);
       display: block;
       margin: 20px auto;
