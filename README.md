@@ -5,10 +5,6 @@
   <title>Bryllup</title>
 
   <style>
-    /* ===============================
-       GLOBALT DESIGN
-    =============================== */
-
     :root {
       --text: clamp(15px, 2.5vw, 19px);
       --h1: clamp(32px, 6vw, 60px);
@@ -32,13 +28,9 @@
     h1 { font-size: var(--h1); margin: 0; }
     h2 { font-size: var(--h2); margin-top: 0; }
 
-    /* ===============================
-       HEADER
-    =============================== */
-
     header {
       position: relative;
-      background: url('Kjerag2') center/cover no-repeat;
+      background: url('Kjerag2') center 70% /cover no-repeat;
       padding: clamp(50px, 12vw, 120px) 20px;
       color: white;
       overflow: hidden;
@@ -52,20 +44,8 @@
       z-index: 0;
     }
 
-    header * {
-      position: relative;
-      z-index: 1;
-    }
-
-    #countdown {
-      font-size: clamp(18px, 3vw, 30px);
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    /* ===============================
-       SEKSJON OG BOKSER
-    =============================== */
+    header * { position: relative; z-index: 1; }
+    #countdown { font-size: clamp(18px, 3vw, 30px); margin-top: 10px; font-weight: bold;}
 
     section {
       padding: 20px 15px;
@@ -89,11 +69,7 @@
       transform: translateY(0);
     }
 
-    img {
-      max-width: 100%;
-      border-radius: var(--radius);
-      margin-top: 10px;
-    }
+    img { max-width: 100%; border-radius: var(--radius); margin-top: 10px; }
 
     iframe {
       width: 100%;
@@ -104,13 +80,9 @@
     }
 
     .rsvp {
-      height: 100vh;
-      min-height: 900px;
+      height: 140vh;
+      min-height: 1200px;
     }
-
-    /* ===============================
-       KNAPPER
-    =============================== */
 
     .btn {
       display: inline-block;
@@ -125,31 +97,24 @@
       transition: background 0.2s ease;
     }
 
-    .btn:hover {
-      background: var(--btn-hover);
-    }
+    .btn:hover { background: var(--btn-hover); }
 
-    footer {
-      padding: 20px;
-      font-size: clamp(12px, 2vw, 16px);
-      color: #777;
-    }
+    footer { padding: 20px; font-size: clamp(12px, 2vw, 16px); color: #777; }
 
-    /* ===============================
-       MOBIL: bredere bokser og luftigere layout
-    =============================== */
-
+    /* =========================================
+          MOBIL — FULL BREDDE, KANT TIL KANT
+       ========================================= */
     @media (max-width: 700px) {
 
-      /* Mindre padding på utsiden - boksene blir bredere */
       section {
-        padding: 10px 5px;
+        padding: 0;
+        max-width: 100%;
       }
 
-      /* Mindre margin mellom bokser + litt rundere */
       .box {
-        margin: 12px 0;
-        border-radius: 12px;
+        margin: 0 0 20px 0;
+        border-radius: 0;
+        padding: 20px 15px;
       }
     }
 
@@ -167,16 +132,13 @@
 
 <section>
 
-  <div class="box">
-    <h2>Se så fine vi er 💛</h2>
-    <img src="Vin" alt="">
-  </div>
-
-  <div class="box">
-    <h2>Praktisk informasjon</h2>
-    <p><strong>Vielse:</strong> Vestbygda kapell kl. 13:00</p>
-    <p><strong>Fest:</strong> Spind grendehus AL kl. 15:00</p>
-    <p><strong>Kleskode:</strong> Dress og kjole – men ikke for stivt. Ta med dansesko!</p>
+    <div class="box">
+    <h2>Program</h2>
+    <p>
+      <strong>13:00</strong> Vielse i Vestbygda kapell          <br>
+      <strong>15:00</strong> Festen begynner på Spind Grendehus <br>
+      <strong>19:00</strong> Festen fortsetter for de store     
+    </p>
   </div>
 
   <div class="box">
@@ -192,21 +154,18 @@
   </div>
 
   <div class="box">
-    <h2>Program</h2>
-    <p>
-      13:00 Vielse i Vestbygda kapell<br>
-      15:00 Fest på Spind grendehus<br>
-      19:00 Festen begynner for de store<br>
-      05:00 Kvelden
-    </p>
+    <h2>Praktisk info</h2>
+    <strong>Kleskode:</strong> Dress og kjole – men ikke for stivt. Ta med dansesko!<br>
+    <br>Vi ønsker oss ikke gaver, men heller tjenester og hjelp til dagen. <br>
+    <strong>Mat:</strong> Vi ønsker å ha tapas på selve dagen og trenger hjelp til å lage tapasretter<br>
+    <strong>Opp- og nedrigging:</strong> Vi trenger hjelp til å pynte, dekke på og rydde av.
   </div>
 
   <div class="box">
     <h2>Overnatting</h2>
     <p>
       🏡 <a href="https://www.stayover.no/" target="_blank">Stayover @ Lista</a>  
-      <br>22 sengeplasser holdt av – ta kontakt for romvalg 💛  
-      <br><br>
+      <br> 👆 22 sengeplasser holdt av 👆 <br> ta kontakt for romvalg 💛 <br> 
       🏨 <a href="https://www.rederiethotell.no/rom" target="_blank">Rederiet Hotell</a><br>
       🌊 <a href="https://farsundfjordhotell.no/" target="_blank">Fjordhotellet</a><br>
       ⛺ <a href="https://lomsesanden.no/" target="_blank">Lomsesanden Camping</a><br>
@@ -214,17 +173,25 @@
   </div>
 
   <div class="box">
-    <h2>RSVP 📝</h2>
+    <h2>Kommer dere? 📝</h2>
     <iframe class="rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSd2oyFLzM-TEauIwwDhfBARAkKgjZftjDCIMes1-Wi5p2QIhQ/viewform?usp=publish-editor"></iframe>
   </div>
 
   <div class="box">
     <h2>Kontakt</h2>
     <p>
-      Toastmastere:<br>
-      Thea Seglem Tangen — +47 xxxxxxxx<br>
-      Tore Solberg Engebretsen — +47 xxxxxxxx
+      <strong>Oss:</strong> <br>
+      Åshild - 47329070 <br>
+      Cedrick - 41558641 <br><br>
+      <strong>Toastmastere:</strong><br>
+      Thea Seglem Tangen - 46621279<br>
+      Tore Solberg Engebretsen - 90242176
     </p>
+  </div>
+
+    <div class="box">
+    <h2>Se så fine vi er 💛</h2>
+    <img src="Vin" alt="Bryllupsbilde">
   </div>
 
 </section>
@@ -234,7 +201,6 @@
 </footer>
 
 <script>
-  /* COUNTDOWN */
   const weddingDate = new Date(document.getElementById('wedding-date').innerText).getTime();
   const countdownEl = document.getElementById('countdown');
 
@@ -253,7 +219,6 @@
     countdownEl.textContent = `⏳ ${days} dager, ${hours} timer, ${minutes} minutter igjen`;
   }, 1000);
 
-  /* FADE-IN */
   const boxes = document.querySelectorAll('.box');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
