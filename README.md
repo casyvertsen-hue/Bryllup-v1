@@ -80,7 +80,7 @@
       width: 70%;
       height: 300px;           /* ← JUSTER DENNE */
       object-fit: cover;
-      object-position: bottom;
+      object-position: center;
       border-radius: var(--radius);
       display: block;
       margin: 20px auto;
